@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -11,15 +12,10 @@
             background-color: #000;
             color: #fff;
             font-family: 'IBM Plex Sans JP', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
         }
-        
+
         header {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -30,24 +26,185 @@
             padding: 0 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
-        
+
         .logo-group {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        
+
         .left-logo {
             height: 40px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 100px auto; /* Adds space from the fixed header */
+            padding: 20px;
+            text-align: center;
+        }
+
+        a {
+            color: #00c6c0; 
+            text-decoration: none;
+        }
+
+        h1 .lainapp {
+            background: linear-gradient(90deg, #FFB827, #C21761, #00C6C0);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        h1 .festivals {
+            color: #C21761;
+        }
+
+        /* Section Spacing */
+        .section {
+            margin: 80px 0; /* Equal and larger spacing between sections */
+        }
+
+        /* Market Logos Styling */
+        .market-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px; /* Equal spacing between logos */
+            justify-content: center; /* Center align the logos */
+            align-items: center;
+        }
+
+        .market-logos img {
+            width: 150px; /* Uniform size */
+            height: 50px;
+            object-fit: contain; /* Maintain aspect ratio without stretching */
+            display: block;
+        }
+
+        /* Carousel Styling */
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .video-demo video {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        /* Team Section */
+        .team {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .team-member strong {
+            color: #4D52DF;
+        }
+
+        .team .role {
+            color: #4D52DF;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 600px;
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                height: 400px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="logo">
-            <img src="logo.svg" alt="Lainapp Logo" class="logo">
+        <div class="logo-group">
+            <img src="logo.svg" alt="Lainapp Left Logo" class="left-logo"> 
         </div>
     </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Welcome Section -->
+        <div class="section">
+            <h1>
+                <span class="lainapp">Lainapp</span>, el teu assistent per a una experiència personalitzada i única als 
+                <span class="festivals">festivals de música</span>.
+            </h1>
+            <p>Projecte nascut en el marc de la 6a edició del programa AI4All impulsat per l'UAB, el CVC i l'IIIA CSIC.</p>
+        </div>
+
+        <!-- Carousel Section -->
+        <div class="section">
+            <h2>Explora la nostra trajectòria</h2>
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7273279555165921280" allowfullscreen></iframe>
+            <p>Guardonats com a un dels dos projectes de la 6a edició del programa AI4All que passen a l'AI Accelerator.</p>
+        </div>
+
+        <!-- Market Opinions Section -->
+        <div class="section">
+            <h2>Què diu el mercat?</h2>
+            <div class="opinions">
+                <blockquote>“Recomanar grups ens ajudaria a explotar tot el cartell.”</blockquote>
+                <blockquote>“La clau es troba en millorar l’experiència per fidelitzar al públic.”</blockquote>
+                <blockquote>“Un assistent pot ajudar a gaudir dels concerts i no perdre el temps en cues o altres.”</blockquote>
+                <blockquote>“La captació de dades amb l’assistent ens podría ajudar a entendre millor que passa durant el festival.”</blockquote>
+            </div>
+            <div class="market-logos">
+                <img src="logo1.svg" alt="Market logo 1">
+                <img src="logo2.svg" alt="Market logo 2">
+                <img src="logo3.svg" alt="Market logo 3">
+                <img src="logo4.svg" alt="Market logo 4">
+            </div>
+        </div>
+
+        <!-- Presentation Download -->
+        <div class="section">
+            <h2>Descarrega el nostre One Pager</h2>
+            <a href="Lainapp_4yfn2025_onepager.pdf" download>Descarrega</a>
+        </div>
+
+        <!-- Video Demo Section -->
+        <div class="section">
+            <h2>Visualitza la nostra demo</h2>
+            <div class="video-demo">
+                <video controls>
+                    <source src="demo.mp4" type="video/mp4">
+                    El teu navegador no suporta l'etiqueta de vídeo.
+                </video>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Explora el nostre mockup</h2>
+            
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/Thx42ac8cjtxZIkmOLeRov/Lainapp_App_P%C3%BAblic?page-id=6%3A654&node-id=413-977&p=f&viewport=13217%2C8590%2C0.9&scaling=scale-down&content-scaling=fixed&starting-point-node-id=413%3A977&embed-host=share" allowfullscreen></iframe>
+            
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/qr1aAXq2FWbEob57ANI3zr/Lainapp_Dashboard_Promotor?page-id=0%3A1&node-id=105-662&p=f&viewport=1423%2C-125%2C0.08&scaling=scale-down&content-scaling=fixed&starting-point-node-id=105%3A662&embed-host=share" allowfullscreen></iframe>
+        </div>
+
+        <!-- Team Section -->
+        <div class="section">
+            <h2>Coneix el nostre equip</h2>
+            <div class="team">
+                  <div class="team-member">
+                    <strong>Gemma <span class="role">(CEO)</span></strong> - <a href="https://www.linkedin.com/in/gemmagalverlacruz" target="_blank">LinkedIn</a>
+                </div>
+                <div class="team-member">
+                    <strong>Ana <span class="role">(COO)</span></strong> - <a href="https://www.linkedin.com/in/anna-arias-bulbena-phd-a3b337119/" target="_blank">LinkedIn</a>
+                </div>
+                <div class="team-member">
+                    <strong>Ariana <span class="role">(CTO)</span></strong> - <a href="https://linkedin.com/in/ariana-cr" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
-
